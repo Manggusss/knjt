@@ -1,136 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Nama Website</h1>
+        <p>Slogan atau deskripsi singkat di sini</p>
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Layanan</a></li>
+            <li><a href="#">Artikel</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Layout Utama -->
+    <div class="container">
+        <!-- Konten Utama -->
+        <main>
+            <section class="content">
+                <h2>Judul Konten</h2>
+                <p>Isi konten utama Anda di sini. Bisa berupa artikel, informasi produk, atau berita terbaru.</p>
+            </section>
+
+            <section class="content">
+                <h2>Artikel Terbaru</h2>
+                <p>Tambahkan beberapa artikel atau berita di sini.</p>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <h3>Menu Samping</h3>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+
+            <h3>Info Singkat</h3>
+            <p>Bisa tambahkan iklan, info event, atau kontak singkat di sini.</p>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nama Website | Dibuat dengan ❤ HTML & CSS</p>
+    </footer>
+</body>
+</html>
+/* Reset dasar */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #f4f4f4;
-  color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
 }
 
 /* Header */
 header {
-  background: #4caf50;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
+    background: #0067FF;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    
 }
 
 header h1 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 100px;
+}
+
+header p {
+  font-size: 0px;
 }
 
 /* Navigasi */
 nav {
-  background: #333;
+    background: #0067FF;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li a {
-  display: block;
-  padding: 14px 20px;
-  color: white;
-  text-decoration: none;
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
 }
 
 nav ul li a:hover {
-  background: #575757;
+    background: #575757;
 }
 
 /* Container layout */
 .container {
-  display: flex;
-  padding: 20px;
-  gap: 20px;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
 }
 
 /* Konten utama */
 main {
-  flex: 3;
+    flex: 3;
 }
 
 .content {
-  background: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* Sidebar */
 aside {
-  flex: 1;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 aside h3 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 aside ul {
-  list-style: none;
-  margin-bottom: 20px;
+    list-style: none;
+    margin-bottom: 20px;
 }
 
 aside ul li a {
-  text-decoration: none;
-  color: #4caf50;
+    text-decoration: none;
+    color:#0067FF;
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 15px;
-  background: #333;
-  color: white;
-  margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    background:#0067FF;
+    color: white;
+    margin-top: 20px;
 }
 
 /* Responsif */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
+    .container {
+        flex-direction: column;
+    }
 }
 /* Dropdown menu */
 nav ul li {
-  position: relative;
+    position: relative;
 }
 
 nav ul li .dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #333;
-  min-width: 160px;
-  border-radius: 0 0 6px 6px;
-  overflow: hidden;
-  z-index: 1000;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1800FF;
+    min-width: 160px;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+    z-index: 1000;
 }
 
 nav ul li .dropdown li a {
-  padding: 12px 16px;
-  display: block;
-  color: white;
+    padding: 12px 16px;
+    display: block;
+    color: white;
 }
 
 nav ul li .dropdown li a:hover {
-  background: #575757;
+    background: #1800FF;
 }
 
 /* Tampilkan dropdown saat hover */
 nav ul li:hover .dropdown {
-  display: block;
+    display: block;
 }
