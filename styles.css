@@ -1,204 +1,151 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <h1>Nama Website</h1>
-        <p>Slogan atau deskripsi singkat di sini</p>
-    </header>
-
-    <!-- Navigasi -->
-    <nav>
-        <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Tentang</a></li>
-            <li><a href="#">Layanan</a></li>
-            <li><a href="#">Artikel</a></li>
-            <li><a href="#">Kontak</a></li>
-        </ul>
-    </nav>
-
-    <!-- Layout Utama -->
-    <div class="container">
-        <!-- Konten Utama -->
-        <main>
-            <section class="content">
-                <h2>Judul Konten</h2>
-                <p>Isi konten utama Anda di sini. Bisa berupa artikel, informasi produk, atau berita terbaru.</p>
-            </section>
-
-            <section class="content">
-                <h2>Artikel Terbaru</h2>
-                <p>Tambahkan beberapa artikel atau berita di sini.</p>
-            </section>
-        </main>
-
-        <!-- Sidebar -->
-        <aside>
-            <h3>Menu Samping</h3>
-            <ul>
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-            </ul>
-
-            <h3>Info Singkat</h3>
-            <p>Bisa tambahkan iklan, info event, atau kontak singkat di sini.</p>
-        </aside>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Nama Website | Dibuat dengan ❤ HTML & CSS</p>
-    </footer>
-</body>
-</html>
 /* Reset dasar */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #f4f4f4;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ganti font agar lebih modern */
 }
 
 /* Header */
-header {
-    background: #0067FF;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    
-}
-
-header h1 {
-    margin-bottom: 10px;
-    font-size: 100px;
-}
-
-header p {
-  font-size: 0px;
+.header-img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Navigasi */
 nav {
-    background: #0067FF;
+    background: #34495e; /* Warna navigasi yang lebih elegan (dark blue/grey) */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Tambahkan shadow tipis */
 }
-
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
 }
-
+nav ul li {
+    position: relative;
+}
 nav ul li a {
-    display: block;
-    padding: 14px 20px;
     color: white;
+    padding: 15px 20px;
+    display: block;
     text-decoration: none;
+    transition: background 0.3s; /* Efek transisi halus */
 }
-
 nav ul li a:hover {
-    background: #575757;
+    background: #e74c3c; /* Warna hover tetap merah */
 }
 
-/* Container layout */
+/* Dropdown */
+nav ul li ul.dropdown {
+    display: none;
+    position: absolute;
+    background: #2c3e50; /* Warna dropdown sedikit lebih gelap */
+    top: 50px;
+    left: 0;
+    list-style: none;
+    min-width: 150px;
+    z-index: 10; /* Pastikan dropdown di atas konten lain */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+nav ul li:hover ul.dropdown {
+    display: block;
+}
+nav ul li ul.dropdown li a {
+    padding: 10px;
+    color: #fff;
+}
+nav ul li ul.dropdown li a:hover {
+    background: #e74c3c;
+}
+
+
+/* Layout utama */
 .container {
     display: flex;
-    padding: 20px;
-    gap: 20px;
+    padding: 40px 20px; /* Tambah padding atas dan bawah */
+    max-width: 1200px; /* Batasi lebar container */
+    margin: 0 auto; /* Tengah-kan container */
 }
-
-/* Konten utama */
 main {
     flex: 3;
+    padding-right: 40px; /* Tambah jarak ke sidebar */
 }
 
-.content {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Gaya Judul Konten Utama */
+main h2 {
+    font-size: 1.8em;
+    color: #2c3e50; /* Warna judul yang kuat */
+    margin-bottom: 10px;
+    border-left: 5px solid #e74c3c; /* Garis merah di sebelah kiri judul */
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Gaya Paragraf Konten Utama */
+main p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
 }
 
 /* Sidebar */
 aside {
     flex: 1;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding-left: 20px;
+    border-left: 1px solid #eee; /* Garis pemisah halus */
 }
 
+/* Gaya Judul Sidebar */
 aside h3 {
+    font-size: 1.2em;
+    color: #34495e;
+    margin-top: 0;
     margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e74c3c; /* Garis bawah merah tebal */
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
+/* Gaya Daftar di Sidebar */
 aside ul {
-    list-style: none;
-    margin-bottom: 20px;
+    list-style: none; /* Hapus bullet */
+    padding-left: 0;
+    margin-bottom: 30px;
 }
-
+aside ul li {
+    margin-bottom: 5px;
+}
 aside ul li a {
     text-decoration: none;
-    color:#0067FF;
+    color: #2980b9; /* Warna link biru */
+    display: block;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+aside ul li a:hover {
+    color: #e74c3c; /* Hover menjadi merah */
+}
+
+/* Gaya Info Terkini */
+aside p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    background-color: #f9f9f9; /* Background tipis */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #eee;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 15px;
-    background:#0067FF;
+    padding: 20px; /* Tambah padding */
+    background: #34495e; /* Samakan dengan warna navigasi */
     color: white;
-    margin-top: 20px;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-}
-/* Dropdown menu */
-nav ul li {
-    position: relative;
-}
-
-nav ul li .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #1800FF;
-    min-width: 160px;
-    border-radius: 0 0 6px 6px;
-    overflow: hidden;
-    z-index: 1000;
-}
-
-nav ul li .dropdown li a {
-    padding: 12px 16px;
-    display: block;
-    color: white;
-}
-
-nav ul li .dropdown li a:hover {
-    background: #1800FF;
-}
-
-/* Tampilkan dropdown saat hover */
-nav ul li:hover .dropdown {
-    display: block;
+    margin-top: 40px; /* Tambah jarak dari konten */
+    font-size: 0.9em;
 }
