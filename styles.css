@@ -130,6 +130,7 @@ aside ul li a:hover {
     color: #e74c3c; /* Hover menjadi merah */
 }
 
+
 /* Gaya Info Terkini */
 aside p {
     font-size: 0.9em;
@@ -140,6 +141,26 @@ aside p {
     border: 1px solid #eee;
 }
 
+aside ul li a {
+    /* Menggunakan Flexbox untuk menyejajarkan gambar dan teks dalam satu baris */
+    display: flex;
+    align-items: center; /* Menengahkan gambar dan teks secara vertikal */
+    padding: 8px 0; /* Tambah padding atas/bawah agar ada jarak antar paket */
+    border-bottom: 1px dashed #eee; /* Garis putus-putus tipis sebagai pemisah */
+}
+
+aside ul li:last-child a {
+    border-bottom: none; /* Hapus garis pemisah di item terakhir */
+}
+
+aside ul li a img {
+    width: 40px; /* Atur lebar gambar */
+    height: 40px; /* Atur tinggi gambar */
+    object-fit: cover; /* Pastikan gambar terlihat penuh tanpa terdistorsi (crop jika perlu) */
+    border-radius: 5px; /* Beri sedikit sudut membulat pada gambar */
+    margin-right: 10px; /* Jarak antara gambar dan teks Paket A/B/C */
+    border: 1px solid #ddd; /* Border tipis agar gambar terlihat lebih rapi */
+}
 /* Footer */
 footer {
     text-align: center;
@@ -149,3 +170,4 @@ footer {
     margin-top: 40px; /* Tambah jarak dari konten */
     font-size: 0.9em;
 }
+
