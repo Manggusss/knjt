@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ganti font agar lebih modern */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Header */
@@ -15,8 +15,8 @@
 
 /* Navigasi */
 nav {
-    background: #34495e; /* Warna navigasi yang lebih elegan (dark blue/grey) */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Tambahkan shadow tipis */
+    background: #34495e;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 nav ul {
     list-style: none;
@@ -31,22 +31,22 @@ nav ul li a {
     padding: 15px 20px;
     display: block;
     text-decoration: none;
-    transition: background 0.3s; /* Efek transisi halus */
+    transition: background 0.3s;
 }
 nav ul li a:hover {
-    background: #e74c3c; /* Warna hover tetap merah */
+    background: #e74c3c;
 }
 
 /* Dropdown */
 nav ul li ul.dropdown {
     display: none;
     position: absolute;
-    background: #2c3e50; /* Warna dropdown sedikit lebih gelap */
+    background: #2c3e50;
     top: 50px;
     left: 0;
     list-style: none;
     min-width: 150px;
-    z-index: 10; /* Pastikan dropdown di atas konten lain */
+    z-index: 10;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 nav ul li:hover ul.dropdown {
@@ -61,113 +61,153 @@ nav ul li ul.dropdown li a:hover {
 }
 
 
-/* Layout utama */
+/* Layout utama - DIKOREKSI HANYA UNTUK TAMPILAN TOKO FULL-WIDTH */
 .container {
-    display: flex;
-    padding: 40px 20px; /* Tambah padding atas dan bawah */
-    max-width: 1200px; /* Batasi lebar container */
-    margin: 0 auto; /* Tengah-kan container */
+    display: block; /* Memastikan konten di bawah header/nav tidak menggunakan flex */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 main {
-    flex: 3;
-    padding-right: 40px; /* Tambah jarak ke sidebar */
+    /* Main mengambil lebar penuh di dalam container */
+    padding-right: 0; 
 }
 
-/* Gaya Judul Konten Utama */
+/* Sidebar - DINONAKTIFKAN KARENA TAMPILAN TOKO */
+aside {
+    display: none; 
+}
+
+/* Gaya Judul Utama (H2) - Untuk "New Releases" & "Collections" */
 main h2 {
-    font-size: 1.8em;
-    color: #2c3e50; /* Warna judul yang kuat */
-    margin-bottom: 10px;
-    border-left: 5px solid #e74c3c; /* Garis merah di sebelah kiri judul */
-    padding-left: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 25px;
+    /* Menghilangkan border-left, padding-left, text-transform lama */
+    border-left: none; 
+    padding-left: 0;
+    text-transform: none; 
+    letter-spacing: 0;
+    font-weight: 500;
 }
 
-/* Gaya Paragraf Konten Utama */
+/* Gaya Paragraf Konten Utama (Jika ada) */
 main p {
     line-height: 1.6;
     color: #555;
     margin-bottom: 25px;
 }
 
-/* Sidebar */
-aside {
-    flex: 1;
-    padding-left: 20px;
-    border-left: 1px solid #eee; /* Garis pemisah halus */
+
+/* ====== Gaya Produk Grid ====== */
+
+/* 1. New Releases Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 kolom */
+    gap: 20px;
 }
 
-/* Gaya Judul Sidebar */
-aside h3 {
-    font-size: 1.2em;
-    color: #34495e;
-    margin-top: 0;
+.product-item {
+    text-align: left;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    display: block;
     margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #e74c3c; /* Garis bawah merah tebal */
-    text-transform: uppercase;
-    font-weight: 600;
 }
 
-/* Gaya Daftar di Sidebar */
-aside ul {
-    list-style: none; /* Hapus bullet */
-    padding-left: 0;
-    margin-bottom: 30px;
-}
-aside ul li {
+.product-name {
+    font-size: 0.9em;
+    color: #333;
     margin-bottom: 5px;
 }
-aside ul li a {
-    text-decoration: none;
-    color: #2980b9; /* Warna link biru */
+
+.product-price {
+    font-size: 1em;
+    font-weight: bold;
+    color: #000;
+}
+
+/* 2. Collections Grid */
+.collection-section {
+    margin-top: 60px;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 kolom */
+    gap: 20px;
+}
+
+.collection-item {
+    text-align: center;
+}
+
+.collection-item img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
     display: block;
-    padding: 5px 0;
-    transition: color 0.2s;
+    margin-bottom: 10px;
 }
-aside ul li a:hover {
-    color: #e74c3c; /* Hover menjadi merah */
+
+.collection-item p {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
 }
 
 
-/* Gaya Info Terkini */
-aside p {
-    font-size: 0.9em;
-    line-height: 1.5;
-    background-color: #f9f9f9; /* Background tipis */
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #eee;
-}
-
-aside ul li a {
-    /* Menggunakan Flexbox untuk menyejajarkan gambar dan teks dalam satu baris */
-    display: flex;
-    align-items: center; /* Menengahkan gambar dan teks secara vertikal */
-    padding: 8px 0; /* Tambah padding atas/bawah agar ada jarak antar paket */
-    border-bottom: 1px dashed #eee; /* Garis putus-putus tipis sebagai pemisah */
-}
-
-aside ul li:last-child a {
-    border-bottom: none; /* Hapus garis pemisah di item terakhir */
-}
-
-aside ul li a img {
-    width: 40px; /* Atur lebar gambar */
-    height: 40px; /* Atur tinggi gambar */
-    object-fit: cover; /* Pastikan gambar terlihat penuh tanpa terdistorsi (crop jika perlu) */
-    border-radius: 5px; /* Beri sedikit sudut membulat pada gambar */
-    margin-right: 10px; /* Jarak antara gambar dan teks Paket A/B/C */
-    border: 1px solid #ddd; /* Border tipis agar gambar terlihat lebih rapi */
-}
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px; /* Tambah padding */
-    background: #34495e; /* Samakan dengan warna navigasi */
+    padding: 20px;
+    background: #34495e;
     color: white;
-    margin-top: 40px; /* Tambah jarak dari konten */
+    margin-top: 40px;
     font-size: 0.9em;
+    width: 100%; /* Memastikan footer mengambil seluruh lebar halaman */
+}
+/* ====== Gaya Banner Komunitas (Prajurit Perang) ====== */
+
+.community-banner {
+    /* Memastikan section mengambil lebar penuh viewport */
+    width: 100%; 
+    
+    /* Memberikan sedikit ruang di atas banner (setelah koleksi) */
+    margin-top: 60px; 
+    
+    /* Penting: Mencegah gambar di dalamnya menyebabkan scrollbar horizontal */
+    overflow: hidden; 
 }
 
+.community-banner-img {
+    /* Gambar akan mengisi lebar 100% dari .community-banner */
+    width: 100%; 
+    height: auto; 
+    display: block; /* Menghilangkan spasi aneh di bawah gambar */
+}
+
+/* Gaya Banner Komunitas */
+.community-banner {
+    /* Memastikan section mengambil lebar penuh viewport */
+    width: 100%; 
+    
+    /* Berikan jarak antara Collections dan Banner */
+    margin-top: 60px; 
+    
+    /* Mencegah scrollbar horizontal jika ada margin/padding tak terduga */
+    overflow: hidden; 
+}
+
+.community-banner-img {
+    /* Gambar akan mengisi lebar 100% dari .community-banner */
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
